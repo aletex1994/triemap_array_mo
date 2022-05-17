@@ -34,12 +34,9 @@ actor Registry {
   public func removeItem(key : Text) : async ?Nat {
     return whitelist.remove(key);
   };
-    public func clearWhitelist (){
+    public func clearWhitelist () {
      for((k,v) in whitelist.entries()){
-       whitelist.delete(k);
+       whitelist.delete(k); 
      }
   };
 }
-
-
-//     dfx deploy triemap_array
