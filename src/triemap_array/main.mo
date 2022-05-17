@@ -14,30 +14,34 @@ actor Registry {
   var whitelist = TrieMap.fromEntries<Text,Nat>(
     entries.vals(), Text.equal, Text.hash);
 
-  public func register(name : Text) : async Nat {
-    switch (whitelist.get(name)) {
-      case null  {
-        whitelist.put(name, whitelist.size());
-        return whitelist.size();
-      };
-      case (?id) {
-        return whitelist.size()
-       };
-    }
-    
+  public func registerAWhitelistValue(key : Text,value : Nat) : async Text {
+   whitelist.put(key,value);
+   return "Added";
+   // switch (whitelist.get(name)) {
+    //  case null  {
+     //   whitelist.put(name, whitelist.size());
+       // return whitelist.size();
+      //};
+      //case (?id) {
+      //return whitelist.size()
+      // };
+    //}    
   };
 
-  public func lookup(name : Text) : async ?Nat {
+  public func getValueFromKey(name : Text) : async ?Nat {
     whitelist.get(name);
   };
 
-  public func addToWhitelist() : async [(Text, Nat)] {
+  public func getSize() : async Nat {
+    return whitelist.size();
+  };
+
+  public func showWhitelist() : async [(Text, Nat)] {
     entries := Iter.toArray(whitelist.entries());
     return entries;
   };
-
-  system func postupgrade() {
-    entries := [];
+  public func removeItem(key : Text) : async ?Nat {
+    return whitelist.remove(key);
   };
 }
 

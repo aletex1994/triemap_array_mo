@@ -5,8 +5,7 @@ service : {
                              });
   getSize: () -> (nat);
   lookup: (text) -> (opt nat);
-  register: (text, nat) -> (text);
-  removeItem: (text) -> (opt nat);
+  register: (text) -> (nat);
   showWhitelist: () -> (vec record {
                               text;
                               nat;
