@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "triemap_array": {
+      "main": "src/triemap_array/main.mo",
+      "type": "motoko"
+    },
+    "triemap_array_assets": {
+      "dependencies": [
+        "triemap_array"
+      ],
+      "frontend": {
+        "entrypoint": "src/triemap_array_assets/src/index.html"
+      },
+      "source": [
+        "src/triemap_array_assets/assets",
+        "dist/triemap_array_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.10.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
