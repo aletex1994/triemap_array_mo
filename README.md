@@ -5,7 +5,7 @@ You can find all the documentation about:
 - :open_book: :open_book: https://smartcontracts.org/docs/current/references/motoko-ref/array
 - :open_book: :open_book: https://smartcontracts.org/docs/current/references/motoko-ref/triemap 
 
-This repo contains these specific functions for :  
+This repo contains functions for :  
 -  :ballot_box_with_check: register a value
 -  :ballot_box_with_check: get a value using a key
 -  :ballot_box_with_check: remove a key and the associated value
