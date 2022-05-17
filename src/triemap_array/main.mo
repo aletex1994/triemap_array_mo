@@ -16,23 +16,14 @@ actor Registry {
 
   public func registerAWhitelistValue(key : Text,value : Nat) : async Text {
    whitelist.put(key,value);
-   return "Added";
-   // switch (whitelist.get(name)) {
-    //  case null  {
-     //   whitelist.put(name, whitelist.size());
-       // return whitelist.size();
-      //};
-      //case (?id) {
-      //return whitelist.size()
-      // };
-    //}    
+   return "Added 2 whitelist"; 
   };
 
   public func getValueFromKey(name : Text) : async ?Nat {
     whitelist.get(name);
   };
 
-  public func getSize() : async Nat {
+  public func getWhitelistSize() : async Nat {
     return whitelist.size();
   };
 
@@ -42,6 +33,11 @@ actor Registry {
   };
   public func removeItem(key : Text) : async ?Nat {
     return whitelist.remove(key);
+  };
+    public func clearWhitelist (){
+     for((k,v) in whitelist.entries()){
+       whitelist.delete(k);
+     }
   };
 }
 
