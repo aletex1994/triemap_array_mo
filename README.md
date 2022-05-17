@@ -1,5 +1,14 @@
 # triemap_array
 
+I created this repo to clarify usage of array and triemap in Motoko. 
+You can find all the documentation about:
+- :open_book: :open_book: https://smartcontracts.org/docs/current/references/motoko-ref/array
+- :open_book: :open_book: https://smartcontracts.org/docs/current/references/motoko-ref/triemap 
+
+To test functions of main.mo you have to interact with canisters and the IC is by using the {company-id} Canister SDK dfx command-line interface or open [CANDID INTERFACE](https://smartcontracts.org/docs/current/developer-docs/build/languages/candid/candid-howto) that provides a common language for specifying the signature of a canister.
+
+:arrow_down: :arrow_down: :arrow_down: TO START DEPLOYING BE READ HERE :arrow_down: :arrow_down: :arrow_down:
+
 Welcome to your new triemap_array project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
