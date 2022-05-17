@@ -5,6 +5,15 @@ You can find all the documentation about:
 - :open_book: :open_book: https://smartcontracts.org/docs/current/references/motoko-ref/array
 - :open_book: :open_book: https://smartcontracts.org/docs/current/references/motoko-ref/triemap 
 
+This repo contains these specific functions for :  
+-  :ballot_box_with_check: register a value
+-  :ballot_box_with_check: get a value using a key
+-  :ballot_box_with_check: remove a key and the associated value
+-  :ballot_box_with_check: get the size of the triemap
+-  :ballot_box_with_check: show the triemap as a vector (array)
+-  :ballot_box_with_check: clear the triemap and the vector(array)
+
+
 To test functions of main.mo you have to interact with canisters and the IC is by using the {company-id} Canister SDK dfx command-line interface or open [CANDID INTERFACE](https://smartcontracts.org/docs/current/developer-docs/build/languages/candid/candid-howto) that provides a common language for specifying the signature of a canister.
 
 :arrow_down: :arrow_down: :arrow_down: TO START DEPLOYMENT READ HERE :arrow_down: :arrow_down: :arrow_down:
