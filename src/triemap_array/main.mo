@@ -11,12 +11,11 @@ actor Registry {
 
   stable var entries : [(Text, Nat)] = [];
 
-  var whitelist = TrieMap.fromEntries<Text,Nat>(
-    entries.vals(), Text.equal, Text.hash);
+  var whitelist = TrieMap.TrieMap<Text,Nat>(Text.equal, Text.hash);
 
   public func registerAWhitelistValue(key : Text,value : Nat) : async Text {
    whitelist.put(key,value);
-   return "Added 2 whitelist"; 
+   return "Whitelisted"; 
   };
 
   public func getValueFromKey(name : Text) : async ?Nat {
