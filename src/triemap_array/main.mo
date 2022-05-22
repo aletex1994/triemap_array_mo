@@ -44,8 +44,18 @@ actor Registry {
     for((k) in whitelist.keys()){
        if(k==key){
          found := true;
-       }
+       };
     };
     return found;
+  };
+
+  public func arrayAsNewWhitelist( new_whitelist : [Text] ) : async [(Text,Nat)] {
+   var i : Nat = 0;
+    for(v in new_whitelist.vals()){
+       whitelist.put(new_whitelist[i],whitelist.size());
+       i+=1;
+    };
+    entries := Iter.toArray(whitelist.entries());
+    return entries; 
   };
 };
