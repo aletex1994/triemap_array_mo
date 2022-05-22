@@ -7,6 +7,7 @@ import Nat "mo:base/Nat";
 import Principal "mo:base/Principal";
 import Text "mo:base/Text";
 import TrieMap "mo:base/TrieMap";
+
 actor Registry {
 
   stable var entries : [(Text, Nat)] = [];
@@ -14,7 +15,7 @@ actor Registry {
   var whitelist = TrieMap.TrieMap<Text,Nat>(Text.equal, Text.hash);
 
   public func registerAWhitelistValue(key : Text,value : Nat) : async Text {
-   whitelist.put(key,value);
+   whitelist.put(key,whitelist.size());
    return "Whitelisted"; 
   };
 
@@ -33,9 +34,18 @@ actor Registry {
   public func removeItem(key : Text) : async ?Nat {
     return whitelist.remove(key);
   };
-    public func clearWhitelist () {
-     for((k,v) in whitelist.entries()){
-       whitelist.delete(k); 
-     }
+  public func clearWhitelist () {
+   for((k,v) in whitelist.entries()){
+     whitelist.delete(k); 
+   };
+  }; 
+  public func findInWhitelist(key : Text) : async Bool {
+    var found : Bool = false;
+    for((k) in whitelist.keys()){
+       if(k==key){
+         found := true;
+       }
+    };
+    return found;
   };
-}
+};
